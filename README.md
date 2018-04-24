@@ -3,7 +3,7 @@ TODO Tasks. Check off with name when completed.
 1. RESTful calls are processed asynchronously and operate properly for both https://pixabay.com/api and Google Cloud Vision services.
 - Completed by:
 1. The icon used for the Floating Action Button (FAB) should be your own unique artwork
--- Completed by:
+- Completed by:
 1. When the user presses the FAB, the image tags and labels are presented as text. The text is presented at the top and bottom of the screen, using a TextView. 
 - Completed by:
 1. When the user presses the FAB, the Pixabay image tags are presented as speech. The speech should be spoken out loud. Text-to--Speech is not required for the Google Cloud Vision labels.
