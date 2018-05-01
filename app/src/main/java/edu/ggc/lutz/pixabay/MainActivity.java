@@ -1,5 +1,6 @@
 package edu.ggc.lutz.pixabay;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -112,12 +113,14 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         if (tvTags.getVisibility() == View.VISIBLE) {
             String s = getString(R.string.pixabay_tags, hit.getTags());
             Log.i(TAG, s);
+            tvTags.setText(s);
             // TODO previous line outputs to logcat, need to format and place s in tvTags
         }
 
         if (tvLabels.getVisibility() == View.VISIBLE) {
             String l =getString(R.string.cloud_vision_labels, labelsToString(label));
             Log.i(TAG, l);
+            tvLabels.setText(l);
             // TODO previous line outputs to logcat, need to format and place l in tvLabels
         }
 
@@ -156,9 +159,11 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        if (id == R.id.action_about) {
+            startActivity(new Intent(MainActivity.this, AboutActivity.class));
+        }
         if (id == R.id.action_settings) {
-            Log.v(TAG, "Settings");
-            return true;
+            startActivity(new Intent(MainActivity.this, SettingActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
