@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Pixabay Tag and Label</string>
     <string name="action_about">About</string>
-    <string name="about_pixabay_sampler">About the Pixabay Sampler</string>
+    <string name="about_pixabay_sampler">About the Pixabay Tag and Label</string>
     <string name="pixabay_logo">Pixabay Logo</string>
-    <string name="created_by">Created by</string>
-    <string name="credits">Credits</string>
-    <string name="general_grizzly">General Grizzly</string>
-    <string name="itec_4550_2018">ITEC 4550</string>
+    <string name="created_by">Created by:</string>
+    <string name="credits">Credits:</string>
+    <string name="authorImg">Image of a castle</string>
+    <string name="itec_4550_2018">ITEC 4550, Spring 2018</string>
     <string name="author_image_general_grizzly">this is the author\'s image</string>
     <string name="pixabay_tag_na"><b>Pixabay Tags:</b> n/a</string>
     <string name="cloud_vision_labels_na"><b>Cloud Vision Labels:</b> n/a</string>
@@ -16,6 +16,8 @@
     <string name="action_settings">Settings</string>
     <string name="show_pixabay_tags">Show Tags</string>
     <string name="cloud_vision_labels_noformat">Show Labels</string>
+    <string name="authorNames">Jacob Piazza, Jessica Sok, Afeefa Firdaus</string>\
+    <string name="appDesc">This app retrieve images from pixabay and labels Google’s Cloud Vision API service.</string>
 
     <string name="threshold">Omit if below</string>
     <string name="show_probabilities">Show Probabilities</string>
