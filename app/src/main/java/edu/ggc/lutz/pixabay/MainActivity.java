@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.api.services.vision.v1.model.EntityAnnotation;
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
     private boolean showLabels;
     private CompositeResults compositeResults;
     private int currentPick;
+    private TextToSpeech ttobj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +67,14 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         fab.setOnClickListener(view -> { stageNewImage(); });
 
         PreferenceManager.setDefaultValues(this, R.xml.app_preferences, false);
+
+        // Set up Text to Speech Object
+        ttobj = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                ttobj.setLanguage(Locale.ENGLISH);
+            }
+        });
     }
 
     void stageNewImage() {
@@ -114,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
             String s = getString(R.string.pixabay_tags, hit.getTags());
             Log.i(TAG, s);
             tvTags.setText(s);
+            ttobj.speak(s, TextToSpeech.QUEUE_FLUSH, null, "ttsTags");
             // TODO previous line outputs to logcat, need to format and place s in tvTags
         }
 

@@ -6,7 +6,7 @@ TODO Tasks. Check off with name when completed.
 - Completed by: Jessica/Afeefa
 1. ~~When the user presses the FAB, the image tags and labels are presented as text. The text is presented at the top and bottom of the screen, using a TextView.~~
 - Completed by: Jessica Sok
-1. When the user presses the FAB, the Pixabay image tags are presented as speech. The speech should be spoken out loud. Text-to--Speech is not required for the Google Cloud Vision labels.
+1. ~~When the user presses the FAB, the Pixabay image tags are presented as speech. The speech should be spoken out loud. Text-to--Speech is not required for the Google Cloud Vision labels.~~
 - Completed by:
 1. ~~When the user presses the FAB, a new random image from Pixabay’s Editor’s Choice should be displayed.~~
 - Completed by: Jessica Sok
