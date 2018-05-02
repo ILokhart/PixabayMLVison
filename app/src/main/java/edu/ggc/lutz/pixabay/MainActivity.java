@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
     void stageNewImage() {
         tvTags.setText(R.string.pixabay_tag_na);
         tvLabels.setText(R.string.cloud_vision_labels_na);
-        image.setImageResource(R.mipmap.ic_launcher);
+        image.setImageResource(R.drawable.loadingpuppycircle);
 
         if (compositeResults == null) return;
 
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
                 fetchTask.execute(url);
             }
             LongSparseArray<List<EntityAnnotation>> labels = compositeResults.getLabels();
-            if (labels.get(id) == null)            // lazy fetch
+            if (labels.get(id) == null)           // lazy fetch
                 new LabelDetectionTask(this, compositeResults, id).execute();
             else {
 
