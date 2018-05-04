@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PixabayMLVison.iml" filepath="$PROJECT_DIR$/PixabayMLVison.iml" />
+      <module fileurl="file://F:\Android Workspace\PixabayMLVison\PixabayMLVison.iml" filepath="F:\Android Workspace\PixabayMLVison\PixabayMLVison.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://F:\Android Workspace\PixabayMLVison\app\app.iml" filepath="F:\Android Workspace\PixabayMLVison\app\app.iml" />
     </modules>
   </component>
 </project>

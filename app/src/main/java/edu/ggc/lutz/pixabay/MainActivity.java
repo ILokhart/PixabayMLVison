@@ -66,7 +66,8 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> { stageNewImage(); });
 
-        PreferenceManager.setDefaultValues(this, R.xml.app_preferences, false);
+        PreferenceManager.setDefaultValues(this, R.xml.app_preferences, true);
+
 
         // Set up Text to Speech Object
         ttobj = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
