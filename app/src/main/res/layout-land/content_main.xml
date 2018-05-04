@@ -23,18 +23,17 @@
 
     <ImageView
         android:id="@+id/ivPhoto"
-        android:layout_width="357dp"
-        android:layout_height="318dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="288dp"
+        android:layout_height="219dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="24dp"
         android:contentDescription="image returned by pixabay"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/tvLabels"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTags"
+        app:layout_constraintVertical_bias="0.466"
         app:srcCompat="@drawable/loadingpuppy" />
 
     <TextView

@@ -15,6 +15,13 @@ import java.util.concurrent.TimeUnit;
 import edu.ggc.lutz.pixabay.json.Hit;
 import edu.ggc.lutz.pixabay.json.PixabayHttpResponse;
 
+/**
+ * This class defines CompositeResults
+ *
+ * @author  Jacob, Jessica, and Afeefa
+ * @version 1.0
+ * @since   2018-05-04
+ */
 public class CompositeResults {
 
     static final String TAG = BuildConfig.TAG;
@@ -30,6 +37,9 @@ public class CompositeResults {
     public LongSparseArray<Bitmap> getBitmaps() { return bitmaps; }
     public LongSparseArray<List<EntityAnnotation>> getLabels() { return labels; }
 
+    /**
+     * This method is the constructor
+     */
     public CompositeResults(String json, Activity activity) throws IOException {
 
         Log.v(TAG, "CompositeResults CompositeResults initialized...");
@@ -42,12 +52,14 @@ public class CompositeResults {
         this.activity = activity;
     }
 
+    // this method returns true or false about time being expired
     boolean isExpired() {
 
         Log.v(TAG, "CompositeResults isExpired initialized...");
 
         return created - System.currentTimeMillis() > DAY_MILLIS;
     }
+
     long size() {
 
         Log.v(TAG, "CompositeResults size initialized...");

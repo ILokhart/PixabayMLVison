@@ -32,6 +32,13 @@ import edu.ggc.lutz.pixabay.json.Hit;
 import edu.ggc.lutz.pixabay.pixabay_service.PixabayBitmapFetchTask;
 import edu.ggc.lutz.pixabay.pixabay_service.PixabayFetchTask;
 
+/**
+ * This class starts the program
+ *
+ * @author  Jacob, Jessica, and Afeefa
+ * @version 1.0
+ * @since   2018-05-04
+ */
 public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
 
     static final String TAG = BuildConfig.TAG;
@@ -46,6 +53,10 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
     private int currentPick;
     private TextToSpeech ttobj;
 
+    /**
+     * This method is used to initialize the activity
+     * @param savedInstanceState takes in a Bundle object
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -82,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         });
     }
 
+    /**
+     * This method stage new images
+     */
     void stageNewImage() {
 
         Log.v(TAG, "Main Activity stageNewImage initialized...");
@@ -116,6 +130,9 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         render();
     }
 
+    /**
+     * This method renders images
+     */
     public void render() {
         // Do not add verbose logging here -- that would be way too chatty!
 
@@ -153,6 +170,9 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         image.setImageBitmap(bitmap);
     }
 
+    /**
+     * This method is a string builder that shows the probabilities along with the description
+     */
     private String labelsToString(List<EntityAnnotation> labels) {
 
         Log.v(TAG, "Main Activity labelsToString initialized...");
@@ -167,6 +187,9 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         return message.toString();
     }
 
+    /**
+     * This method gives the composite result and calls the render method
+     */
     public void onTaskCompleted(CompositeResults results) {
 
         Log.v(TAG, "Main Activity onTaskCompleted initialized...");
@@ -175,6 +198,9 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         render();
     }
 
+    /**
+     * This method create the options menu when the user opens the menu
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -185,6 +211,9 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         return true;
     }
 
+    /**
+     * This method allows the user to select items from the option menu
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -204,18 +233,27 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * This method is for when the activity is paused
+     */
     @Override
     protected void onPause() {
         Log.v(TAG, "Main Activity onPause initialized...");
         super.onPause();
     }
 
+    /**
+     * This method is for when the activity is running
+     */
     @Override
     protected void onResume() {
         Log.v(TAG, "Main Activity onResume initialized...");
         super.onResume();
     }
 
+    /**
+     * This method returns a random number
+     */
     private static long getRandomLong(long minimum, long maximum) {
         Log.v(TAG, "Main Activity getRandomLong initialized...");
         return ((long) (Math.random() * (maximum - minimum))) + minimum;
