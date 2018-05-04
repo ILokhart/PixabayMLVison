@@ -16,8 +16,8 @@ TODO Tasks. Check off with name when completed.
 - Completed by: Jessica Sok
 2. ~~Clicking on Pixabay’s logo (on your About screen) directs the user to the Pixabay website.~~
 - Completed by: Jessica Sok
-2. All activities operate correctly when the device is rotated landscape<-> portrait and vice-versa.
-- Completed by:
+2. ~~All activities operate correctly when the device is rotated landscape<-> portrait and vice-versa.~~
+- Completed by: Jacob
 1. ~~Your app has its own custom launcher icon~~
 - Completed by: Jacob
 1. ~~add verbose logging to all methods~~
