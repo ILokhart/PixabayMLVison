@@ -22,19 +22,19 @@ TODO Tasks. Check off with name when completed.
 - Completed by:
 1. add verbose logging to all methods
 - Completed by:
-1. Use good coding practices. All methods and classes should have descriptive comments. No deprecated code should be used.
-- Completed by:
-2. Settings for: 
--  displaying Pixabay tags
--  displaying cloud vision labels
--  displaying cloud vision probabilities
--  setting cloud vision probability thresholds and 
--  rendering Pixabay tags as speech 
--  should be contained in a settings activity
-- Completed by:
+1. ~~Use good coding practices. All methods and classes should have descriptive comments. No deprecated code should be used.~~
+- Completed by: Jacob
+2. ~~Settings for:  
+displaying Pixabay tags  
+displaying cloud vision labels  
+displaying cloud vision probabilities  
+setting cloud vision probability thresholds and  
+rendering Pixabay tags as speech  
+should be contained in a settings activity~~  
+- Completed by: Jacob
 1. Cloud vison labels below the threshold set in the settings activity should not be displayed
 - Completed by:
-1. Application settings should be persisted with SharedPreferences
-- Completed by:
-1. When the FAB is pressed, the image, tags, and labels should be cleared until updated versions are available. This is where the android launcher is shown in the example. In you app, choose your own artwork for the temporary image. 
-- Completed by:
+1. ~~Application settings should be persisted with SharedPreferences~~
+- Completed by: Jacob
+1. ~~When the FAB is pressed, the image, tags, and labels should be cleared until updated versions are available. This is where the android launcher is shown in the example. In you app, choose your own artwork for the temporary image.~~
+- Completed by: Jessica Sok
