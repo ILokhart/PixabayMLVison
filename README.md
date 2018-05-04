@@ -20,8 +20,8 @@ TODO Tasks. Check off with name when completed.
 - Completed by:
 1. Your app has its own custom launcher icon
 - Completed by:
-1. add verbose logging to all methods
-- Completed by:
+1. ~~add verbose logging to all methods~~
+- Completed by: Jacob
 1. ~~Use good coding practices. All methods and classes should have descriptive comments. No deprecated code should be used.~~
 - Completed by: Jacob
 2. ~~Settings for:  
