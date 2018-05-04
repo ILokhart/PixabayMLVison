@@ -3,6 +3,7 @@ package edu.ggc.lutz.pixabay;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.PreferenceManager;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        Log.v(TAG, "Main Activity onCreate initialized...");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -80,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
     }
 
     void stageNewImage() {
+
+        Log.v(TAG, "Main Activity stageNewImage initialized...");
+
         tvTags.setText(R.string.pixabay_tag_na);
         tvLabels.setText(R.string.cloud_vision_labels_na);
         image.setImageResource(R.drawable.loadingpuppycircle);
@@ -148,26 +154,32 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
     }
 
     private String labelsToString(List<EntityAnnotation> labels) {
+
+        Log.v(TAG, "Main Activity labelsToString initialized...");
+
         StringBuilder message = new StringBuilder();
         for (EntityAnnotation label : labels) {
             if (message.length() > 0) message.append(", ");
-//            if (label.getScore() >= ){
                 message.append(prefs.getBoolean("show_probabilities", true) ?
                         String.format(Locale.US, "%s (%.2f)", label.getDescription(), label.getScore()) :
                         String.format(Locale.US, "%s", label.getDescription()));
-//            }
-
         }
         return message.toString();
     }
 
     public void onTaskCompleted(CompositeResults results) {
+
+        Log.v(TAG, "Main Activity onTaskCompleted initialized...");
+
         compositeResults = results;
         render();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
+        Log.v(TAG, "Main Activity onCreateOptionsMenu initialized...");
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
@@ -175,6 +187,9 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        Log.v(TAG, "Main Activity onOptionsItemSelected initialized...");
+
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -191,15 +206,18 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
 
     @Override
     protected void onPause() {
+        Log.v(TAG, "Main Activity onPause initialized...");
         super.onPause();
     }
 
     @Override
     protected void onResume() {
+        Log.v(TAG, "Main Activity onResume initialized...");
         super.onResume();
     }
 
     private static long getRandomLong(long minimum, long maximum) {
+        Log.v(TAG, "Main Activity getRandomLong initialized...");
         return ((long) (Math.random() * (maximum - minimum))) + minimum;
     }
 }

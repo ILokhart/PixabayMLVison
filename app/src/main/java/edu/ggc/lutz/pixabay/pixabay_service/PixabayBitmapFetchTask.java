@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.util.LongSparseArray;
 
 import java.io.IOException;
@@ -26,6 +27,9 @@ public class PixabayBitmapFetchTask extends AsyncTask<URL, Void, Bitmap> {
     private final OnTaskCompleted listener;
 
     public PixabayBitmapFetchTask(Activity activity, CompositeResults compositeResults, Hit hit) {
+
+        Log.v(TAG, "PixabayBitmapFetchTask PixabayBitmapFetchTask initialized...");
+
         this.hit = hit;
         this.id = hit.getId(); // convert response's index to Pixabay's id
         //this.imageView = imageView;
@@ -35,6 +39,9 @@ public class PixabayBitmapFetchTask extends AsyncTask<URL, Void, Bitmap> {
 
     @Override
     protected Bitmap doInBackground(URL... urls) {
+
+        Log.v(TAG, "PixabayBitmapFetchTask doInBackground initialized...");
+
         LongSparseArray<Bitmap> bitmaps = compositeResults.getBitmaps();
         try {
             InputStream stream = urls[0].openStream();
@@ -46,6 +53,9 @@ public class PixabayBitmapFetchTask extends AsyncTask<URL, Void, Bitmap> {
     }
 
     protected void onPostExecute(Bitmap bitmap) {
+
+        Log.v(TAG, "PixabayBitmapFetchTask onPostExecute initialized...");
+
         listener.onTaskCompleted(compositeResults);
     }
 }

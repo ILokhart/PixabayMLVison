@@ -28,6 +28,9 @@ public class PixabayFetchTask extends AsyncTask<URL, String, CompositeResults> {
     private OnTaskCompleted listener;
 
     public PixabayFetchTask(Activity activity, CompositeResults compositeResults) {
+
+        Log.v(TAG, "PixabayFetchTask PixabayFetchTask initialized...");
+
         this.url = PIXABAY_API_URL + "/?key=" + PIXABAY_API_KEY + QUERY;
         this.compositeResults = compositeResults;
         this.listener = (OnTaskCompleted) activity;
@@ -35,7 +38,9 @@ public class PixabayFetchTask extends AsyncTask<URL, String, CompositeResults> {
 
     @Override
     protected CompositeResults doInBackground(URL... params) {
-        Log.v(TAG, "entering PixabayFetchTask.doInBackground(...)");
+
+        Log.v(TAG, "PixabayFetchTask doInBackGround initialized...");
+
         CompositeResults results = null;
         try {
             String line;
@@ -54,6 +59,9 @@ public class PixabayFetchTask extends AsyncTask<URL, String, CompositeResults> {
 
     @Override
     protected void onPostExecute(CompositeResults results) {
+
+        Log.v(TAG, "PixabayFetchTask onPostExecute initialized...");
+
         super.onPostExecute(results);
         listener.onTaskCompleted(results);
     }

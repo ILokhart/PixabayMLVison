@@ -45,6 +45,9 @@ public class LabelDetectionTask extends AsyncTask<Object, String, List<EntityAnn
 
     @Override
     public List<EntityAnnotation> doInBackground(Object... params) {
+
+        Log.v(TAG, "LabelDetectionTask doInBackground initialized...");
+
         try {
             HttpTransport httpTransport = AndroidHttp.newCompatibleTransport();
             JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
@@ -106,6 +109,9 @@ public class LabelDetectionTask extends AsyncTask<Object, String, List<EntityAnn
 
     @Override
     protected void onPostExecute(List<EntityAnnotation> result) {
+
+        Log.v(TAG, "LabelDetectionTask onPostExecute initialized...");
+
         super.onPostExecute(result);
         if (result != null)
             compositeResults.getLabels().put(id, result);

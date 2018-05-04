@@ -2,6 +2,7 @@ package edu.ggc.lutz.pixabay;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.util.Log;
 import android.util.LongSparseArray;
 
 import com.google.api.services.vision.v1.model.EntityAnnotation;
@@ -30,6 +31,9 @@ public class CompositeResults {
     public LongSparseArray<List<EntityAnnotation>> getLabels() { return labels; }
 
     public CompositeResults(String json, Activity activity) throws IOException {
+
+        Log.v(TAG, "CompositeResults CompositeResults initialized...");
+
         DAY_MILLIS = TimeUnit.DAYS.toMillis(1);
         this.labels = new LongSparseArray<>();
         this.bitmaps = new LongSparseArray<>();
@@ -38,10 +42,22 @@ public class CompositeResults {
         this.activity = activity;
     }
 
-    boolean isExpired() { return created - System.currentTimeMillis() > DAY_MILLIS; }
-    long size() { return response.getHits().size(); }
+    boolean isExpired() {
+
+        Log.v(TAG, "CompositeResults isExpired initialized...");
+
+        return created - System.currentTimeMillis() > DAY_MILLIS;
+    }
+    long size() {
+
+        Log.v(TAG, "CompositeResults size initialized...");
+
+        return response.getHits().size(); }
 
     Hit getHit(int index) {
+
+        Log.v(TAG, "CompositeResults getHit initialized...");
+
         return response.getHits().get(index);
     }
 }
