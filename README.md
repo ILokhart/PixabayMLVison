@@ -18,8 +18,8 @@ TODO Tasks. Check off with name when completed.
 - Completed by: Jessica Sok
 2. All activities operate correctly when the device is rotated landscape<-> portrait and vice-versa.
 - Completed by:
-1. Your app has its own custom launcher icon
-- Completed by:
+1. ~~Your app has its own custom launcher icon~~
+- Completed by: Jacob
 1. ~~add verbose logging to all methods~~
 - Completed by: Jacob
 1. ~~Use good coding practices. All methods and classes should have descriptive comments. No deprecated code should be used.~~
