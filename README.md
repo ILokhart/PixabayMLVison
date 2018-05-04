@@ -24,13 +24,13 @@ TODO Tasks. Check off with name when completed.
 - Completed by:
 1. ~~Use good coding practices. All methods and classes should have descriptive comments. No deprecated code should be used.~~
 - Completed by: Jacob
-2. ~~Settings for:
+2. ~~Settings for:~~
 -  displaying Pixabay tags
 -  displaying cloud vision labels
 -  displaying cloud vision probabilities
 -  setting cloud vision probability thresholds and 
 -  rendering Pixabay tags as speech 
--  should be contained in a settings activity~~
+-  should be contained in a settings activity
 - Completed by: Jacob
 1. Cloud vison labels below the threshold set in the settings activity should not be displayed
 - Completed by:
