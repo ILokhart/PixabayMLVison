@@ -17,13 +17,13 @@
             android:key="cloud_vision_labels"
             android:title="@string/cloud_vision_labels_noformat" />
         <ListPreference
-            android:defaultValue="70"
+            android:defaultValue="0.70"
             android:entries="@array/pref_threshold_titles"
             android:entryValues="@array/pref_threshold_values"
             android:key="threshold"
             android:negativeButtonText="@null"
             android:positiveButtonText="@null"
-            android:summary="70 percent"
+            android:summary="70 Percent"
             android:title="@string/threshold" />
         <SwitchPreference
             android:defaultValue="true"

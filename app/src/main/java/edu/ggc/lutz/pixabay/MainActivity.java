@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> { stageNewImage(); });
 
-        PreferenceManager.setDefaultValues(this, R.xml.app_preferences, true);
+        PreferenceManager.setDefaultValues(this, R.xml.app_preferences, false);
 
 
         // Set up Text to Speech Object
@@ -125,15 +126,21 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
         if (tvTags.getVisibility() == View.VISIBLE) {
             String s = getString(R.string.pixabay_tags, hit.getTags());
             Log.i(TAG, s);
-            tvTags.setText(s);
-            ttobj.speak(s, TextToSpeech.QUEUE_FLUSH, null, "ttsTags");
+            if(prefs.getBoolean("pixabay_tags", true)){
+                tvTags.setText(s);
+            }
+            if(prefs.getBoolean("tts_sound", true)){
+                ttobj.speak(s, TextToSpeech.QUEUE_FLUSH, null, "ttsTags");
+            }
             // TODO previous line outputs to logcat, need to format and place s in tvTags
         }
 
         if (tvLabels.getVisibility() == View.VISIBLE) {
             String l =getString(R.string.cloud_vision_labels, labelsToString(label));
             Log.i(TAG, l);
-            tvLabels.setText(l);
+            if(prefs.getBoolean("cloud_vision_labels", true)){
+                tvLabels.setText(l);
+            }
             // TODO previous line outputs to logcat, need to format and place l in tvLabels
         }
 
@@ -141,13 +148,14 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted {
     }
 
     private String labelsToString(List<EntityAnnotation> labels) {
-
         StringBuilder message = new StringBuilder();
         for (EntityAnnotation label : labels) {
             if (message.length() > 0) message.append(", ");
-            message.append(prefs.getBoolean("show_probabilities", true) ?
-                    String.format(Locale.US, "%s (%.2f)", label.getDescription(), label.getScore()) :
-                    String.format(Locale.US, "%s", label.getDescription()));
+//            if (label.getScore() >= ){
+                message.append(prefs.getBoolean("show_probabilities", true) ?
+                        String.format(Locale.US, "%s (%.2f)", label.getDescription(), label.getScore()) :
+                        String.format(Locale.US, "%s", label.getDescription()));
+//            }
 
         }
         return message.toString();
